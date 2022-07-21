@@ -2,9 +2,6 @@
 
 2022/07
 [Datacamp course - Big Data Fundamentals with PySpark](https://app.datacamp.com/learn/courses/big-data-fundamentals-with-pyspark)
-:::info
-[TOC]
-:::
 
 ## 1. Introduction to Big Data analysis with Spark
 This chapter introduces the exciting world of Big Data, as well as the various concepts and different frameworks for processing Big Data. You will understand why Apache Spark is considered the best framework for BigData.
@@ -911,7 +908,7 @@ df_pandas = names_df.toPandas()
 df_pandas.plot(kind='barh', x='Name', y='Age', colormap='winter_r')
 plt.show()
 ```
-![](https://i.imgur.com/frFEw9N.png =300x)
+![](https://i.imgur.com/frFEw9N.png)
 
 ### Part 1: Create a DataFrame from CSV file
 ```python
@@ -992,7 +989,7 @@ fifa_df_germany_age_pandas = fifa_df_germany_age.toPandas()
 fifa_df_germany_age_pandas.plot(kind='density')
 plt.show()
 ```
-![](https://i.imgur.com/vPspA59.png =300x)
+![](https://i.imgur.com/vPspA59.png)
 
 
 ## 4. Machine Learning with PySpark MLlib
@@ -1374,7 +1371,7 @@ plt.scatter(rdd_split_int_df_pandas["col1"], rdd_split_int_df_pandas["col2"])
 plt.scatter(cluster_centers_pandas["col1"], cluster_centers_pandas["col2"], color="red", marker="x")
 plt.show()
 ```
-![](https://i.imgur.com/jTAad36.png =300x)
+![](https://i.imgur.com/jTAad36.png)
 
 ### --- Congratulations! ---
 #### Fundamentals of BigData and Apache Spark
