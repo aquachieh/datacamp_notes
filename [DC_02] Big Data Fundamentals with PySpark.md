@@ -1,7 +1,10 @@
 # [DC_02] Big Data Fundamentals with PySpark
 
 2022/07
+
 [Datacamp course - Big Data Fundamentals with PySpark](https://app.datacamp.com/learn/courses/big-data-fundamentals-with-pyspark)
+[my note(hackmd ver.)](https://hackmd.io/lccqNA_xQP6lJRdGe0XX-A?view)
+
 
 ## 1. Introduction to Big Data analysis with Spark
 This chapter introduces the exciting world of Big Data, as well as the various concepts and different frameworks for processing Big Data. You will understand why Apache Spark is considered the best framework for BigData.
@@ -192,7 +195,7 @@ Number of partitions in fileRDD_part is 5
 #### RDD Transformations
 ![](https://i.imgur.com/0HISAtw.png)
 **map()**
-applya function to all elements in the RDD
+apply a function to all elements in the RDD
 ![](https://i.imgur.com/RJUDMFF.png)
 **filter()**
 return a new RDD with only the elements that pass the condition
@@ -211,18 +214,18 @@ return mutiple values for element in the original RDD
 
 ```python=
 RDD_map.collect()
-#[1, 4, 9, 16]
+# [1, 4, 9, 16]
 RDD_map.take(2)
-#[1, 4]
+# [1, 4]
 ```
 **first()** and **count()** Actions
 - first() prints the first element of the RDD
 - count() return the number of elements in the RDD
 ```python=
 RDD_map.first()
-#[1]
+# [1]
 RDD_flatmap.count()
-#5
+# 5
 ```
 
 ### Map and Collect
@@ -251,11 +254,11 @@ print("The total number of lines with the keyword Spark is", fileRDD_filter.coun
 for line in fileRDD_filter.take(4): 
   print(line)
 
-#>>> The total number of lines with the keyword Spark is 5
-#>>> Examples for Learning Spark
-#>>> Examples for the Learning Spark book. These examples require a number of libraries and as such have long build files. We have also added a stand alone example with minimal dependencies and a small build file
-#>>> These examples have been updated to run against Spark 1.3 so they may
-#>>> * Spark 1.3
+# >>> The total number of lines with the keyword Spark is 5
+# >>> Examples for Learning Spark
+# >>> Examples for the Learning Spark book. These examples require a number of libraries and as such have long build files. We have also added a stand alone example with minimal dependencies and a small build file
+# >>> These examples have been updated to run against Spark 1.3 so they may
+# >>> * Spark 1.3
 ```
 
 ### --- Working with Pair RDDs in PySpark ---
@@ -336,9 +339,9 @@ Rdd_Reduced = Rdd.reduceByKey(lambda x, y: x+y)
 for num in Rdd_Reduced.collect(): 
     print("Key {} has {} Counts".format(num[0], num[1]))
 
-#>>> Key 1 has 2 Counts
-#>>> Key 3 has 10 Counts
-#>>> Key 4 has 5 Counts
+# >>> Key 1 has 2 Counts
+# >>> Key 3 has 10 Counts
+# >>> Key 4 has 5 Counts
 ```
 
 
@@ -351,9 +354,9 @@ Rdd_Reduced_Sort = Rdd_Reduced.sortByKey(ascending=False)
 for num in Rdd_Reduced_Sort.collect():
   print("Key {} has {} Counts".format(num[0], num[1]))
 
-#>>> Key 4 has 5 Counts
-#>>> Key 3 has 10 Counts
-#>>> Key 1 has 2 Counts
+# >>> Key 4 has 5 Counts
+# >>> Key 3 has 10 Counts
+# >>> Key 1 has 2 Counts
 ```
 
 ### --- Advanced RDD Actions ---
@@ -365,7 +368,7 @@ for num in Rdd_Reduced_Sort.collect():
 x = [1,3,4,6]
 RDD = sc.parallelize(x)
 RDD.reduce(lambda x, y : x + y)
-#>>> 14
+# >>> 14
 ```
 
 #### saveAsTextFile() action
@@ -382,15 +385,15 @@ counts the number of elements for each key
 rdd = sc.parallelize([("a", 1), ("b", 1), ("a", 1)])
 for kee, val in rdd.countByKey().items():
     print(kee, val)
-#>>> ('a', 2)
-#>>> ('b', 1)
+# >>> ('a', 2)
+# >>> ('b', 1)
 ```
 
 #### collectAsMap() action
 return the key-value pairs in the RDD as a dictionary
 ```python=
 sc.parallelize([(1, 2), (3, 4)]).collectAsMap()
-#>>> {1: 2, 3: 4}
+# >>> {1: 2, 3: 4}
 ```
 
 ### CountingBykeys
@@ -405,10 +408,10 @@ print("The type of total is", type(total))
 for k, v in total.items(): 
     print("key", k, "has", v, "counts")
 
-#>>> The type of total is <class 'collections.defaultdict'>
-#>>> key 1 has 1 counts
-#>>> key 3 has 2 counts
-#>>> key 4 has 1 counts
+# >>> The type of total is <class 'collections.defaultdict'>
+# >>> key 1 has 1 counts
+# >>> key 3 has 2 counts
+# >>> key 4 has 1 counts
 ```
 
 ### Create a base RDD and transform it
@@ -421,7 +424,7 @@ splitRDD = baseRDD.flatMap(lambda x: x.split())
 
 # Count the total number of words
 print("Total number of words in splitRDD:", splitRDD.count())
-#>>> Total number of words in splitRDD: 904061
+# >>> Total number of words in splitRDD: 904061
 
 ```
 
@@ -508,7 +511,7 @@ names = ['Model', 'Year', 'Height', 'Width', 'Weight']
 
 iphones_df = spark.createDataFrame(iphones_RDD, schema=names)
 type(iphones_df)
-#>>> pyspark.sql.dataframe.DataFrame
+# >>> pyspark.sql.dataframe.DataFrame
 ```
 #### Create a DataFrame from reading a CSV/JSON/TXT
 ```python
@@ -530,7 +533,7 @@ names_df = spark.createDataFrame(rdd, schema=['Name', 'Age'])
 # Check the type of names_df
 print("The type of names_df is", type(names_df))
 
-#>>>The type of names_df is <class 'pyspark.sql.dataframe.DataFrame'>
+# >>>The type of names_df is <class 'pyspark.sql.dataframe.DataFrame'>
 ```
 
 ### Loading CSV into DataFrame
@@ -541,7 +544,7 @@ people_df = spark.read.csv(file_path, header=True, inferSchema=True)
 # Check the type of people_df
 print("The type of people_df is", type(people_df))
 
-#>>> The type of people_df is <class 'pyspark.sql.dataframe.DataFrame'>
+# >>> The type of people_df is <class 'pyspark.sql.dataframe.DataFrame'>
 ```
 
 ### --- Operating on DataFrames in PySpark ---
