@@ -3,13 +3,8 @@
 2022/07
 
 [Datacamp course - Data Manipulation with pandas](https://app.datacamp.com/learn/courses/data-manipulation-with-pandas)
+
 [my notes (hackmd ver.)](https://hackmd.io/dmyB1Xi6RTy5uMn014CNoQ?view)
-
-
-:::info
-[TOC]
-:::
-
 
 ## 1. Transforming DataFrames
 Let’s master the pandas basics. Learn how to inspect DataFrames and perform fundamental manipulations, including sorting rows, subsetting, and adding new columns.
