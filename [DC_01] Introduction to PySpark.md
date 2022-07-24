@@ -1,11 +1,8 @@
 # [DC_01] Introduction to PySpark
 
-2022/07
-[Datacamp course - Introduction to PySpark](https://app.datacamp.com/learn/courses/introduction-to-pyspark)
+2022/07  
+[Datacamp course - Introduction to PySpark](https://app.datacamp.com/learn/courses/introduction-to-pyspark)  
 [my_notes(hackmd.ver)](https://hackmd.io/VBqBDscUTXSe48TN8SRnAQ?view)
-:::info
-[TOC]
-:::
 
 ## 1. Getting to know PySpark
 In this chapter, you'll learn how Spark manages data and how can you read and write tables from Python.
