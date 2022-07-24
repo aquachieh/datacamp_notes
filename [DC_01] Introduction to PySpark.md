@@ -127,6 +127,7 @@ print(pd_counts.head())
 ```
 
 ### Put some Spark in your data
+![](https://i.imgur.com/krrmYru.png)
 ```python
 # Create pd_temp
 pd_temp = pd.DataFrame(np.random.random(10))
